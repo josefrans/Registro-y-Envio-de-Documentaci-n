@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro y Envío de Documentación</title>
+    <!-- Tailwind CSS para un diseño moderno y responsivo Xoce-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body class="bg-slate-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+        <!-- Encabezado -->
+        <div class="bg-gradient-to-r from-purple-700 to-indigo-800 py-6 px-8 text-white">
+            <h2 class="text-2xl font-bold">Registro de Documentación</h2>
+            <p class="text-purple-200 text-sm mt-1">Por favor, completa tus datos y adjunta los requisitos solicitados.</p>
+        </div>
+
+        <!-- Formulario -->
+        <!-- Reemplaza "tu-codigo-de-formspree" en el action con tu ID real de Formspree -->
+        <form action="https://formspree.io/f/xljgzqqr" method="POST" enctype="multipart/form-data" class="p-8 space-y-6">
+            
+            <!-- Datos Personales -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-slate-800 border-b pb-2">1. Datos Personales</h3>
+                
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Nombre Completo</label>
+                    <input type="text" name="nombre" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="Ej. José Francisco Hernández Hernández">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Correo Electrónico</label>
+                        <input type="email" name="email" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="correo@ejemplo.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Teléfono de Contacto</label>
+                        <input type="tel" name="telefono" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="10 dígitos">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carga de Documentos (Basado en la imagen de requisitos) xoce-->
+            <div class="space-y-4 pt-2">
+                <h3 class="text-lg font-semibold text-slate-800 border-b pb-2">2. Documentación Requerida</h3>
+                <p class="text-xs text-slate-500">Sube tus archivos en formato PDF o imagen clara (máx. 5MB por archivo).</p>
+
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">INE (Identificación Oficial)</label>
+                        <input type="file" name="ine" accept=".pdf,image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer border border-slate-200 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Comprobante de Domicilio</label>
+                        <input type="file" name="comprobante_domicilio" accept=".pdf,image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer border border-slate-200 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Comprobante de Estudios</label>
+                        <input type="file" name="comprobante_estudios" accept=".pdf,image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer border border-slate-200 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Número de IMSS</label>
+                        <input type="text" name="numero_imss" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="Número de seguro social">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">RFC / Constancia de Situación Fiscal</label>
+                        <input type="file" name="rfc_constancia" accept=".pdf,image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer border border-slate-200 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">CURP</label>
+                        <input type="file" name="curp" accept=".pdf,image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer border border-slate-200 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Acta de Nacimiento</label>
+                        <input type="file" name="acta_nacimiento" accept=".pdf,image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer border border-slate-200 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Estado de Cuenta para Pago</label>
+                        <input type="file" name="estado_cuenta" accept=".pdf,image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer border border-slate-200 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Xoce Botón de Envío -->
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-md hover:shadow-lg">
+                    Enviar Información
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
